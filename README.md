@@ -27,3 +27,6 @@
 7. create argocd app
    sudo kubectl apply -f simple_aws_webapp/argocd/app.yaml
 
+8. ArgoCD UI
+   sudo kubectl port-forward svc/argocd-server -n argocd 8080:443
+
