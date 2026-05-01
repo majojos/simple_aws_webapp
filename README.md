@@ -13,13 +13,17 @@
 3. install k3s
    curl -sfL https://get.k3s.io | sh -
 
-4. install git
+4. install ArgoCD
+   sudo kubectl create namespace argocd
+   sudo kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+5. install git
    sudo dnf update -y
    sudo dnf install git -y
 
-5. clone repo
+6. clone repo
    git clone https://github.com/majojos/simple_aws_webapp.git
 
-6. install ArgoCD
-   kubectl apply -f simple_aws_webapp/argocd/app.yaml
+7. create argocd app
+   sudo kubectl apply -f simple_aws_webapp/argocd/app.yaml
 

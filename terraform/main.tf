@@ -29,7 +29,7 @@ resource "aws_security_group" "devops_sg" {
 
 resource "aws_instance" "devops" {
   ami           = "ami-09fc5668766215f32"
-  instance_type = "t3.micro"
+  instance_type = "t3.small"
   security_groups = [aws_security_group.devops_sg.name]
 
   key_name = "from_ubuntu"
