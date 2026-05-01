@@ -21,7 +21,7 @@ resource "aws_security_group" "devops_sg" {
 }
 
 resource "aws_instance" "devops" {
-  ami           = "ami-0ed094fb1304fd857"
+  ami           = "ami-09fc5668766215f32"
   instance_type = "t3.micro"
   security_groups = [aws_security_group.devops_sg.name]
 
