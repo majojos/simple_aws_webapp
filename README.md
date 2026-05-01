@@ -7,6 +7,7 @@
    terraform apply
 
 2. SSH to EC2
+   get the ssh command: python3 get_ssh_connect_commands_ecs2.py
 
 3. install k3s
    curl -sfL https://get.k3s.io | sh -
