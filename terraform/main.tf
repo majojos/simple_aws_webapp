@@ -25,6 +25,8 @@ resource "aws_instance" "devops" {
   instance_type = "t3.micro"
   security_groups = [aws_security_group.devops_sg.name]
 
+  key_name = "from_ubuntu"
+
   tags = {
     Name = "devops-argocd"
   }
