@@ -5,6 +5,7 @@ provider "aws" {
 resource "aws_security_group" "devops_sg" {
   name = "devops-sg"
 
+  # SSH
   ingress {
     from_port   = 22
     to_port     = 22
@@ -12,6 +13,7 @@ resource "aws_security_group" "devops_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+  # HTTP (nginx)
   ingress {
     from_port   = 80
     to_port     = 80
@@ -19,6 +21,15 @@ resource "aws_security_group" "devops_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+  # ArgoCD UI (port-forward)
+  ingress {
+    from_port   = 8080
+    to_port     = 8080
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  # Outbound (all)
   egress {
     from_port   = 0
     to_port     = 0
